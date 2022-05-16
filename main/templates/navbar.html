@@ -1,0 +1,209 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="{% static 'img/favicon.ico' %}">
+
+	</head>
+	<body style="background-color: #101419; margin: 0;">
+
+		
+		<div class="wrap" style="margin-bottom: 10vh;">
+			<nav>
+				<ul class="primary" style="padding: 0; margin: 0;">
+					<li><a class="atag" href="{% url 'index' %}">FOR NFTS</a></li>
+					<li>
+						<a class="atag" href="#">FILTERS ᐯ</a>
+						<ul class="sub">
+							<li><a class="atag" href="#">
+
+								<p><a class="size" style="text-decoration: none; color: #0D9EBF; font-family: Arial, Helvetica, sans-serif;" href="{% url 'index' %}">ALL</a></p>
+						
+								<p class="size" style="color: #0D9EBF; font-family: Arial, Helvetica, sans-serif;"><a style="color: #0D9EBF;">BLOCKCHAIN</a></p>
+										
+								{% for i in blockchain %}
+										
+									<p><a class="size" style="color: #F4F4F9; text-decoration: none; font-family: Arial, Helvetica, sans-serif;" href="{% url 'index' %}?qq={{ i.block }}">{{ i.block }}</a></p>
+										
+								{% endfor %}
+										
+									<p class="size" style="color: #0D9EBF; font-family: Arial, Helvetica, sans-serif;"><a style="color: #0D9EBF;">MARKETPLACE</a></p>
+										
+								{% for i in marketplace %}
+										
+									<p><a class="size" style=" color: #F4F4F9; text-decoration: none; font-family: Arial, Helvetica, sans-serif;" href="{% url 'index' %}?qqq={{ i.market }}">{{ i.market }}</a></p>
+										
+								{% endfor %}
+
+							</a></li>
+						</ul>
+						<li><a class="atag" href="{% url 'newpost' %}">ADD NEW RELEASE</a></li>
+					<li><a class="atag" href="{% url 'promote' %}">PROMOTIONS</a></li>
+					</li>
+				</ul>
+				<hr style="padding: 0; margin: 0;">
+			</nav>
+		</div>
+
+	</body>
+</html>
+
+<style>
+
+	body { 
+	font-family: helvetica, arial, serif;
+	font-size: 1vw;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	height: 100%;
+	}
+	
+
+
+	.atag {
+	text-decoration: none;
+	color: #fff;
+	display: block;
+	}
+
+	ul {
+	list-style: none;
+	position: relative;
+	text-align: left;
+	}
+
+	li {
+	float: left;
+	}
+
+	/* clear'n floats */
+	ul:after {
+	clear: both;
+	}
+
+	ul:before,
+	ul:after {
+		content: " ";
+		display: table;
+	}
+
+	nav {
+	position: relative;
+	background: #2B2B2B;
+	background-image: -webkit-linear-gradient(bottom, #181E25 7%, #181E25 100%);
+
+	text-align: center;
+	letter-spacing: 1px;
+	}
+
+	/* prime */
+	ul.primary li .atag {
+	display: block;
+	padding: 2vw 2.5vw;
+	border-right: 1px solid #3D3D3D;
+	}
+
+	ul.primary li:last-child .atag {
+	border-right: none;
+	}
+
+	ul.primary li .atag:hover {
+	color: #000;
+	}
+
+	/* subs */
+	ul.sub {
+	position: absolute;
+	z-index: 200;
+	width: 15%;
+	display: none;
+	}
+
+	ul.sub li {
+	float: none;
+	margin: 0;
+	}
+
+	ul.sub li .atag {
+	border-bottom: 1px dotted #ccc;
+	border-right: none;
+	color: #000;
+	padding: 1vw 2vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	}
+
+	ul.sub li:last-child .atag {
+	border-bottom: none;
+	}
+
+	ul.sub li .atag:hover {
+	color: #000;
+	background: #fff;
+	}
+
+	/* sub display*/
+	ul.primary li:hover ul {
+		width: 20vw;
+	display: block;
+	background: #101419;
+	}
+
+	/* keeps the tab background white */
+	ul.primary li:hover .atag {
+	background: #101419;
+	color: #666;
+	text-shadow: none;
+	}
+
+	ul.primary li:hover > .atag{
+	color: #fff;
+	}
+
+	.size {
+		font-size: 1.6vw;
+	}
+
+	@media only screen and (max-width: 800px){
+
+		body { 
+			font-family: helvetica, arial, serif;
+			font-size: 2vw;
+			margin-bottom: 0;
+			padding-bottom: 0;
+			height: 100%;
+		}
+
+		ul.primary li .atag {
+			display: block;
+			padding: 3vw 3.5vw;
+			border-right: 1px solid #3D3D3D;
+		}
+
+		ul.sub {
+			position: absolute;
+			width: 20%;
+			display: none;
+		}
+
+		.size {
+			font-size: 3vw;
+		}
+
+		ul.primary li:hover ul {
+		width: 35vw;
+	display: block;
+	background: #101419;
+	}
+
+	}
+
+</style>
+
+{% block content %}{% endblock content %}
