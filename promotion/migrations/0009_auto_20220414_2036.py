@@ -13,11 +13,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='blockchainpromo',
             name='blockp',
-            field=models.CharField(max_length=20),
+            field=models.CharField(max_length=10000),
         ),
         migrations.AlterField(
             model_name='marketplacepromo',
             name='marketp',
-            field=models.CharField(max_length=20),
+            field=models.CharField(max_length=10000),
         ),
     ]

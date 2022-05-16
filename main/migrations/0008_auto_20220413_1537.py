@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='blockchain',
             name='block',
-            field=models.CharField(blank=True, default=django.utils.timezone.now, max_length=20),
+            field=models.CharField(blank=True, default=django.utils.timezone.now, max_length=10000),
             preserve_default=False,
         ),
         migrations.AlterField(

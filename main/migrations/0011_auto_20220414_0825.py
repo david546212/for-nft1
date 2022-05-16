@@ -14,12 +14,12 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='blockchain',
             name='block',
-            field=models.CharField(max_length=20),
+            field=models.CharField(max_length=10000),
         ),
         migrations.AlterField(
             model_name='marketplace',
             name='market',
-            field=models.CharField(max_length=20),
+            field=models.CharField(max_length=10000),
         ),
         migrations.AlterField(
             model_name='newevent',
