@@ -2,148 +2,157 @@
 
 {% load static %}
 
+
+
 {% block content %}
 
-
-
-           
     
     <!DOCTYPE html>
-    <html lang="">
         <head>
-            <title>detail</title>
+            <title>for-nft</title>
             <meta name="keywords" content="nft, nfts, drop, release, nft drops, nft releases, nft calendar">
-
+            <meta name="description" content="Do you want to sell your new nft collection? Then come on this website to promote it here!">
         </head>
-        <body style="background-color: #101419">
-            <div class="main">
-                <div style="padding-bottom: 10%; display: flex; justify-content: center; align-items: center;">
-                    <div style="border: solid; border-radius: 8px; border-color: #0D9EBF; border-width: 1px; background-color: #181E25;">    
+        <body style="background-color: #101419;">
+    
+            <div style="position: relative;">
+                <div>
+    
+
+    
+                    <div>
                         <div>
-                            <figure style="margin: auto; padding: 2vw;">
-                                <figcaption style="text-transform: uppercase; margin-right: auto; color: #F4F4F9;"><h1 style="font-family: Arial, Helvetica, sans-serif;">{{ release.title }}</h1></figcaption>
-                                <hr class="hrr">
-                                <div class="image">
-                                    <figcaption><img style="max-width: 100%; max-height: 100%; padding-top: 1vw;" src="{{ release.image.url }}" alt="nft"></figcaption>
+                        
+
+                
+
+                                <div class="main">
+                                    <div class="bor">    
+                                        <figure style="margin: auto; padding: 2vw;">
+                                            <figcaption style="text-transform: uppercase; margin-right: auto; color: #F4F4F9;"><h1 class="txxxt">{{ release.title }}</h1></figcaption>
+                                            <hr class="hrr">
+                                            <div class="image">
+                                                    <img style="max-width: 100%; max-height: 100%; padding-top: 1vw;" src="{{ release.image.url }}" alt="nft">
+                                           </div>
+                                           <hr class="hrr">
+                                            <figcaption style="margin-right: auto; color: #F4F4F9;"><p class="txt" >Release date: {{ release.release_date }}</p></figcaption>
+                                            <figcaption style="margin-right: auto; color: #F4F4F9;"><p class="txt" style="font-family: Arial, Helvetica, sans-serif;">Blockchain: {{ release.blockchain }}</p></figcaption>
+                                            <figcaption style="margin-right: auto; color: #F4F4F9;"><p class="txt" style="font-family: Arial, Helvetica, sans-serif;">Marketplace: {{ release.marketplace }}</p></figcaption>
+                                            <figcaption><p class="txt" style="font-family: Arial, Helvetica, sans-serif; color: #F4F4F9;">Marketplace: <a class="edit" style="font-family: Arial, Helvetica, sans-serif; color: #F4F4F9;" href="{{ release.link }}">MARKETPLACE</a></p></figcaption>
+                               
+                               
+                                            {% if release.twiter %}
+                                                <figcaption><p class="txt" style="font-family: Arial, Helvetica, sans-serif; color: #F4F4F9;">Twitter: <a style="font-family: Arial, Helvetica, sans-serif; color: #F4F4F9;" href="{{ release.twiter }}">TWITTER</a></p></figcaption>
+                                            {% endif %}
+                    
+                                            {% if release.website %}
+                                                <figcaption><p class="txt" style="font-family: Arial, Helvetica, sans-serif; color: #F4F4F9;">Website: <a style="font-family: Arial, Helvetica, sans-serif; color: #F4F4F9;" href="{{ release.website }}">WEBSITE</a></p></figcaption>
+                                            {% endif %}
+                    
+                                            {% if release.discord %}
+                                                <figcaption><p class="txt" style="font-family: Arial, Helvetica, sans-serif; color: #F4F4F9;">Discord: <a style="font-family: Arial, Helvetica, sans-serif; color: #F4F4F9;" href="{{ release.discord }}">DISCORD</a></p></figcaption>
+                                            {% endif %}
+                                            <br>
+                                            <figcaption><a class="btn color" style="text-decoration: none; color: #F4F4F9; font-family: Arial, Helvetica, sans-serif;" href="{% url 'index' %}">BACK</a></figcaption>
+                                        </figure>
+                                    </div>
                                 </div>
-                                <hr class="hrr">
-                                <br>
-                                <figcaption style="margin-right: auto; color: #F4F4F9;"><p class="txt" style="font-family: Arial, Helvetica, sans-serif;">Release date: {{ release.release_date }}</p></figcaption>
+                            <br>
+                            <br>
+                            <br>
+                
+                            <style>
+    
+                                .btn {
+                                    font-size: 1.5vw;
+                                    font-weight: 600;
+                                    color: white;
+                                    cursor: pointer;
+                                    height: 55px;
+                                    text-align:center;
+                                    border: none;
+                                    background-size: 300% 100%;
+                                    border-radius: 13px;
+                                    padding-top: 1.5%;
+                                    padding-bottom: 1.5%;
+                                    padding-left: 6%;
+                                    padding-right: 6%;
+                                }
         
-                                <figcaption style="margin-right: auto; color: #F4F4F9;"><p class="txt" style="font-family: Arial, Helvetica, sans-serif;">Blockchain: {{ release.blockchain }}</p></figcaption>
-                                <figcaption style="margin-right: auto; color: #F4F4F9;"><p class="txt" style="font-family: Arial, Helvetica, sans-serif;">Marketplace: {{ release.marketplace }}</p></figcaption>
+                                .btn.color {
+                                    background-color: #0D9EBF;
+                                }
         
-    
-                                        <figcaption><p class="txt" style="font-family: Arial, Helvetica, sans-serif; color: #F4F4F9;">Marketplace: <a class="edit" style="font-family: Arial, Helvetica, sans-serif; color: #F4F4F9;" href="{{ release.link }}">MARKETPLACE</a></p></figcaption>
-                               
-                               
-                                {% if release.twiter %}
-                                    <figcaption><p class="txt" style="font-family: Arial, Helvetica, sans-serif; color: #F4F4F9;">Twitter: <a style="font-family: Arial, Helvetica, sans-serif; color: #F4F4F9;" href="{{ release.twiter }}">TWITTER</a></p></figcaption>
-                                {% endif %}
-        
-                                {% if release.website %}
-                                    <figcaption><p class="txt" style="font-family: Arial, Helvetica, sans-serif; color: #F4F4F9;">Website: <a style="font-family: Arial, Helvetica, sans-serif; color: #F4F4F9;" href="{{ release.website }}">WEBSITE</a></p></figcaption>
-                                {% endif %}
-        
-                                {% if release.discord %}
-                                    <figcaption><p class="txt" style="font-family: Arial, Helvetica, sans-serif; color: #F4F4F9;">Discord: <a style="font-family: Arial, Helvetica, sans-serif; color: #F4F4F9;" href="{{ release.discord }}">DISCORD</a></p></figcaption>
-                                {% endif %}
-                                <br>
-                                <figcaption><a class="btn color" style="text-decoration: none; color: #F4F4F9; font-family: Arial, Helvetica, sans-serif;" href="{% url 'index' %}">BACK</a></figcaption>
-                            </figure>
-    
-                                <style>
-    
-                                    .btn {
-                                        font-size: 16px;
-                                        font-weight: 600;
-                                        color: white;
-                                        cursor: pointer;
-                                        height: 55px;
-                                        text-align:center;
-                                        border: none;
-                                        background-size: 300% 100%;
-                                        border-radius: 13px;
-                                        padding-top: 1.5%;
-                                        padding-bottom: 1.5%;
-                                        padding-left: 6%;
-                                        padding-right: 6%;
-                                    }
-    
-                                    .btn.color {
-                                        background-color: #0D9EBF;
-                                    }
-    
-                                    .btn:hover {
-                                        background-color: #0c87a3;
-                                    }
-    
-                                    .image {
-                                        text-align: center;
-                                        width: 48vw;
-                                        height: 45vw;
-                                        padding-bottom: 2vw;
-                                        }
-    
-                                    html, body {
-                                        width: 100%;
-                                        height: 100%;
-                                        margin: 0;
-                                        overflow-x: hidden;
-                                        position: absolute;
-                                        top: 0;
-                                    }
-                                    
-                                    .hrr {
-                                        background-color: #0D9EBF;
-                                        height: 1px; border: none;
-                                        margin: auto;
-                                        clear: both;
-                                    }
-    
-                                    .txt {
-                                        font-family: Arial, Helvetica, sans-serif;
-                                        font-size: 1.25vw;
-                                    }
-    
-                                    h1 {
-                                        font-size: 2.5vw;
-                                    }
-    
-                                    .main {
+                                .btn:hover {
+                                    background-color: #0c87a3;
+                                }
+
+                                .image {
+                                    text-align: center;
+                                    width: 43vw;
+                                    height: 40vw;
+                                    padding-bottom: 2vw;
+                                }
+
+                                .hrr {
+                                    background-color: #0D9EBF;
+                                    height: 1px; border: none;
+                                    margin: auto;
+                                    clear: both;
+                                }
+
+                                .bor {
+                                    border: solid;
+                                    width: auto;
+                                    border-radius: 8px;
+                                    border-color: #0D9EBF;
+                                    border-width: 1px;
+                                    background-color: #181E25;
+                                }
+
+                                .main {
                                     display: flex;
                                     justify-content: center;
                                     align-items: center;
                                 }
-    
-                                    @media only screen and (max-width: 1000px) {
-                                    
+
+                                .txt {
+                                    font-family: Arial, Helvetica, sans-serif;
+                                    font-size: 1.25vw;
+                                }
+
+                                @media only screen and (max-width: 1000px) {
+
                                     .image {
                                         text-align: center;
                                         width: 75vw;
                                         height: 70vw;
                                         padding-bottom: 2vw;
                                     }
-    
+
                                     .hrr {
                                         background-color: #0D9EBF;
                                         height: 1px; border: none;
                                         margin: auto;
                                         clear: both;
                                     }
-    
-    
+
+
                                     .main {
                                         display: flex;
                                         justify-content: center;
                                         align-items: center;
                                     }
-    
+
                                     .txt {
                                         font-family: Arial, Helvetica, sans-serif;
                                          font-size: 3vw;
                                     }
-    
+
+                                    .txxxt {
+                                        font-size: 4.5vw;
+                                    }
+
                                     .btn {
                                         font-size: 2vw;
                                         font-weight: 600;
@@ -159,26 +168,46 @@
                                         padding-left: 6%;
                                         padding-right: 6%;
                                     }
-                                    .main {
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
                                 }
-                            }
+        
+                            </style>
     
-    
-                                </style>
-    
+
+                            <style>
+                                @media only screen and (max-width: 1000px) {
+                                    .sb {
+                                        font-size: 3vw;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
+
+                                }
+                            </style>
+                
                         </div>
                     </div>
                 </div>
-    
             </div>
-
-
+    
+            
         </body>
     </html>
-    
+
+    <style>
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            overflow-x: hidden;
+            position: absolute;
+            top: 0;
+            padding-top: 0;
+            margin-top: 0;
+            }
+
+    </style>
 
 
 
