@@ -1,4 +1,4 @@
-{% extends "navbar.html" %}
+{% extends "navbar1.html" %}
 
 {% load static %}
 
@@ -9,10 +9,9 @@
     
     <!DOCTYPE html>
         <head>
-            <title>for-nft</title>
+            <title>nft promotions</title>
             <meta name="keywords" content="nft, nfts, drop, release, nft drops, nft releases, nft calendar">
             <meta name="description" content="Do you want to sell your new nft collection? Then come on this website to promote it here!">
-
             <!-- Global site tag (gtag.js) - Google Analytics -->
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-10H4D495WE"></script>
             <script>
@@ -33,7 +32,7 @@
                     <div>
                         <div>
                         
-                            {% for i in posts %}
+                            {% for i in postspromo %}
                 
 
                                 <div class="main">
@@ -45,8 +44,8 @@
                                                     <img style="max-width: 100%; max-height: 100%; padding-top: 1vw;" src="{{ i.image.url }}" alt="nft">
                                            </div>
                                            <hr class="hrr">
-                                            <figcaption style="margin-right: auto; color: #F4F4F9;"><p class="txt" >Release date: {{ i.release_date }}</p></figcaption>
-                                            <figcaption><a class="btn color" style="text-decoration: none;" href="{% url 'detail_drop' i.title i.pk %}">DETAIL</a></figcaption>
+                                           <br>
+                                            <figcaption><a class="btn color" style="text-decoration: none;" href="{% url 'detail_promotion' i.title i.pk %}">DETAIL</a></figcaption>
                                         </figure>
                                     </div>
                                 </div>
@@ -78,6 +77,11 @@
         
                                 .btn:hover {
                                     background-color: #0c87a3;
+                                }
+
+                                .txt {
+                                    overflow: hidden;
+                                    display:inline-block;
                                 }
 
                                 .image {
@@ -118,8 +122,8 @@
 
                                     .image {
                                         text-align: center;
-                                        width: 75vw;
-                                        height: 70vw;
+                                        width: 68vw;
+                                        height: 64vw;
                                         padding-bottom: 2vw;
                                     }
 
@@ -130,6 +134,14 @@
                                         clear: both;
                                     }
 
+                                    .bor {
+                                        border: solid;
+                                        width: auto;
+                                        border-radius: 8px;
+                                        border-color: #0D9EBF;
+                                        border-width: 1px;
+                                        background-color: #181E25;
+                                    }
 
                                     .main {
                                         display: flex;
@@ -157,32 +169,29 @@
                                         padding-left: 6%;
                                         padding-right: 6%;
                                     }
+
                                 }
         
                             </style>
     
                             {% empty %}
+
                                 <div style="padding-top: 10%; padding-bottom: 5%;">
                                     <div style="display: flex; align-items: center; justify-content: center;">
-                                        <div style="font-size: 20px; border: solid; width: auto; padding-left: 2%; padding-right: 2%; border-radius: 8px; border-color: #0D9EBF; border-width: 1px;">
-                                            <p class="sb" style="color: #F4F4F9; display: flex; justify-content: center; align-items: center; font-family: Arial, Helvetica, sans-serif;">This website was released on 15.5.2022</p>
-                                            <p class="sb" style="color: #F4F4F9; display: flex; justify-content: center; align-items: center; font-family: Arial, Helvetica, sans-serif;">On this website, you can promote the launch of your new NFTS</p>
-                                            <p class="sb" style="color: #F4F4F9; display: flex; justify-content: center; align-items: center; font-family: Arial, Helvetica, sans-serif;">collection or promote an existing one.</p>
+                                        <div style="font-size: 20px; border: solid; width: auto; padding-left: 8%; padding-right: 8%; border-radius: 8px; border-color: #0D9EBF; border-width: 1px; padding-top: 1%; padding-bottom: 1%;">
+                                            <p class="sb" style="color: #F4F4F9; display: flex; justify-content: center; align-items: center; font-family: Arial, Helvetica, sans-serif;">It looks like this configuration is empty yet.</p>
                                         </div>
                                     </div>
                                 </div>
-    
+        
     
                             {% endfor %}
+
                             <style>
                                 @media only screen and (max-width: 1000px) {
                                     .sb {
                                         font-size: 3vw;
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
                                     }
-
                                 }
                             </style>
                 
@@ -191,10 +200,11 @@
                 </div>
             </div>
     
-            
+        
+
         </body>
     </html>
-
+    
     <style>
 
         html, body {
@@ -209,8 +219,5 @@
             }
 
     </style>
-
-
-
 
 {% endblock content %}
