@@ -69,7 +69,9 @@
                                 <div class="main">
                                     <div class="bor">    
                                         <figure style="margin: auto; padding: 2vw;">
-                                            <figcaption style="text-transform: uppercase; margin-right: auto; color: #F4F4F9;"><h1 class="txt">{{ i.title }}</h1></figcaption>
+
+                                                <figcaption style="text-transform: uppercase; margin-right: auto; color: #F4F4F9;"><h1 class="txt">{{ i.title }}</h1></figcaption>
+
                                             <hr class="hrr">
                                             <div class="image">
                                                     <img style="max-width: 100%; max-height: 100%; padding-top: 1vw;" src="{{ i.image.url }}" alt="nft">
@@ -86,21 +88,6 @@
                 
                             <style>
     
-                                .btn {
-                                    font-size: 1.5vw;
-                                    font-weight: 600;
-                                    color: white;
-                                    cursor: pointer;
-                                    height: 55px;
-                                    text-align:center;
-                                    border: none;
-                                    background-size: 300% 100%;
-                                    border-radius: 13px;
-                                    padding-top: 1.5%;
-                                    padding-bottom: 1.5%;
-                                    padding-left: 6%;
-                                    padding-right: 6%;
-                                }
         
                                 .btn.color {
                                     background-color: #0D9EBF;
@@ -113,13 +100,6 @@
                                 .txt {
                                     overflow: hidden;
                                     display:inline-block;
-                                }
-
-                                .image {
-                                    text-align: center;
-                                    width: 38vw;
-                                    height: 35vw;
-                                    padding-bottom: 2vw;
                                 }
 
                                 .hrr {
@@ -138,17 +118,46 @@
                                     background-color: #181E25;
                                 }
 
-                                .main {
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
-                                }
+                                .image {
+                                        text-align: center;
+                                        width: 38vw;
+                                        height: 35vw;
+                                        padding-bottom: 2vw;
+                                    }
 
-                                .txt {
-                                    font-family: Arial, Helvetica, sans-serif;
-                                    font-size: 30px;
-                                    display: flex;
-                                }
+                                    .hrr {
+                                        background-color: #0D9EBF;
+                                        height: 1px; border: none;
+                                        margin: auto;
+                                        clear: both;
+                                    }
+
+                                    .main {
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
+
+                                    .txt {
+                                        font-family: Arial, Helvetica, sans-serif;
+                                         font-size: 1.5vw;
+                                    }
+
+                                    .btn {
+                                        font-size: 2vw;
+                                        font-weight: 600;
+                                        color: white;
+                                        cursor: pointer;
+                                        height: 55px;
+                                        text-align:center;
+                                        border: none;
+                                        background-size: 300% 100%;
+                                        border-radius: 13px;
+                                        padding-top: 1.5%;
+                                        padding-bottom: 1.5%;
+                                        padding-left: 6%;
+                                        padding-right: 6%;
+                                    }
 
                                 @media only screen and (max-width: 1000px) {
 
