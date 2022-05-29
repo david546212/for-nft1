@@ -31,3 +31,11 @@ class PromoteNftPromo(models.Model):
 
     def __str__(self):
         return self.title
+
+class Promotion(models.Model):
+    image_ad = models.ImageField(null=False)
+    title_ad = models.CharField(max_length=500)
+    url_ad = models.CharField(max_length=10000)
+
+    def __str__(self):
+        return self.title_ad

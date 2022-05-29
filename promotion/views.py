@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from . models import BlockchainPromo, MarketplacePromo, PromoteNftPromo
+from . models import BlockchainPromo, MarketplacePromo, PromoteNftPromo, Promotion
 from . forms import PromoteFormPromo, BlochchainFormPromo, MarketplaceFormPromo
 
 # Create your views here.
@@ -12,9 +12,10 @@ def index(request):
     postspromo = PromoteNftPromo.objects.filter(blockchain__blockp__icontains=x, marketplace__marketp__icontains=xx)
     blockchainpromo = BlockchainPromo.objects.all()
     marketplacepromo = MarketplacePromo.objects.all()
+    promo = Promotion.objects.all()
 
     context = {
-        "postspromo": postspromo, "blockchainpromo": blockchainpromo, "marketplacepromo": marketplacepromo
+        "postspromo": postspromo, "blockchainpromo": blockchainpromo, "marketplacepromo": marketplacepromo, "promo": promo
     }
 
     return render(request, "second_base.html", context)
